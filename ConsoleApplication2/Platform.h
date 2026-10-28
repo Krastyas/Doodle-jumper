@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 class Player;
 
@@ -16,11 +17,11 @@ public:
 	virtual ~Platform() = default;
 
 	virtual void ApplyEffect(Player* player) = 0;
-	virtual const char* GetName() const = 0;
+	virtual std::string GetName() = 0;
 
-	int GetX() const { return x; }
-	int GetY() const { return y; }
-	int GetWidth() const { return width; }
+	int GetX() { return x; }
+	int GetY() { return y; }
+	int GetWidth() { return width; }
 };
 
 class BoostPlatform : public Platform
@@ -29,8 +30,8 @@ public:
 	BoostPlatform(int startX, int startY)
 		: Platform(startX, startY, 10) {}
 
-	void ApplyEffect(Player* player) override;
-	const char* GetName() const override { return "Boost"; }
+	void ApplyEffect(Player* player);
+	std::string GetName() { return "Boost"; }
 };
 
 class WeakPlatform : public Platform
@@ -39,8 +40,8 @@ public:
 	WeakPlatform(int startX, int startY)
 		: Platform(startX, startY, 10) {}
 
-	void ApplyEffect(Player* player) override;
-	const char* GetName() const override { return "Weak"; }
+	void ApplyEffect(Player* player);
+	std::string GetName() { return "Weak"; }
 };
 
 class SpringPlatform : public Platform
@@ -49,6 +50,6 @@ public:
 	SpringPlatform(int startX, int startY)
 		: Platform(startX, startY, 10) {}
 
-	void ApplyEffect(Player* player) override;
-	const char* GetName() const override { return "Spring"; }
+	void ApplyEffect(Player* player);
+	std::string GetName() { return "Spring"; }
 };

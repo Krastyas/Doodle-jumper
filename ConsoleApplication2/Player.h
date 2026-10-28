@@ -63,32 +63,32 @@ public:
 		jumpPower = 3.2f;
 	}
 
-	float GetX() const
+	float GetX()
 	{
 		return x;
 	}
 
-	float GetY() const
+	float GetY()
 	{
 		return y;
 	}
 
-	int GetHeight() const
+	int GetHeight()
 	{
 		return height;
 	}
 
-	float GetJumpPower() const
+	float GetJumpPower()
 	{
 		return jumpPower;
 	}
 
-	bool IsJumping() const
+	bool IsJumping()
 	{
 		return isJumping;
 	}
 
-	float GetVelocity() const
+	float GetVelocity()
 	{
 		return velocityY;
 	}
